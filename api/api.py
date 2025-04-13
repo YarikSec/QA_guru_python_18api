@@ -5,7 +5,7 @@ URL_API = 'https://demowebshop.tricentis.com/'
 def add_product_to_cart(product_id, quantity):
     result = post_api_request(
         url=URL_API + f'addproducttocart/details/{product_id}/1',
-        data={f'addtocart_{product_id}.EnterQuantity': {quantity}}
+        data={f'addtocart_{product_id}.EnteredQuantity': {quantity}}
     )
     return result
 
@@ -17,7 +17,7 @@ def add_product_with_cookies(product_id, quantity, cookies):
 
     result = post_api_request(
         url=URL_API + f'addproducttocart/details/{product_id}/1',
-        data={f'addtocart_{product_id}.EnterQuantity': {quantity}},
+        data={f'addtocart_{product_id}.EnteredQuantity': {quantity}},
         headers=headers
     )
 

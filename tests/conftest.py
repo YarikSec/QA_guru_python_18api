@@ -1,5 +1,6 @@
 import pytest
 from selene import browser
+from utils.attach import add_screenshot, add_logs, add_html, add_video
 
 
 @pytest.fixture(scope='function', autouse=True)
@@ -12,5 +13,10 @@ def browser_conf():
     browser.config.window_height = 1080
 
     yield
+
+    add_screenshot(browser)
+    add_logs(browser)
+    add_html(browser)
+    add_video(browser)
 
     browser.quit()
